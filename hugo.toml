@@ -1,0 +1,261 @@
+baseURL = "/"
+title = "انجمن علمی آمار علامه طباطبایی"
+theme = "Mehraner-hugo"
+timeZone = "Asia/Tehran"
+# post pagination
+paginate = 6 
+summaryLength = 10 
+googleAnalytics = "G-CHEBM9VFBO"
+disqusShortname = "" # mehraner
+disableLanguages = [] 
+hasCJKLanguage = false
+
+[build]
+noJSConfigInAssets = false
+useResourceCacheWhen = 'fallback'
+[build.buildStats]
+enable = true
+[[build.cachebusters]]
+source = 'assets/.*\.(js|ts|jsx|tsx)'
+target = '(js|scripts|javascript)'
+[[build.cachebusters]]
+source = 'assets/.*\.(css|sass|scss)$'
+target = '(css|styles|scss|sass)'
+[[build.cachebusters]]
+source = 'assets/.*\.(.*)$'
+target = '$1'
+
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[imaging]
+quality = 90
+resampleFilter = "lanczos"
+
+[caches]
+[caches.images]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+[caches.assets]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+[markup]
+[markup.goldmark.renderer]
+unsafe = true
+
+
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.css"
+[[params.plugins.css]]
+link = "plugins/animate/animate.css"
+[[params.plugins.css]]
+link = "plugins/venobox/venobox.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+link = "plugins/venobox/venobox.min.js"
+[[params.plugins.js]]
+link = "plugins/filterizr/jquery.filterizr.min.js"
+[[params.plugins.js]]
+link = "plugins/google-map/gmap.js"
+
+[params]
+logo = "images/bme.png"
+# Meta data
+description = "از این پس انجمن مهندسی پزشکی دانشگاه آزاد واحد تهران مرکز دارای یک پلتفرم مستقل برای ارتباط با دانشجو و همچنین راحتی دانشجویان عزیز برای دریافت منظم اطلاعات دانشگاهی است. وب‌سایت در مراحل ابتدایی توسعه قرار دارد. درنتیجه از شما سروران عزیز تقاضا میکنیم ایده - پیشنهاد و همچنین نقدی بر کارکرد وب‌سایت دارید با استفاده از صفحه ارتباط با انجمن و یا ایمیل درارتباط باشید تا بتونیم هرچه بهتر این بستر را توسعه بدیم همچنین اگر یک توسعه دهنده و فرد فنی هستید تمام این سورس کد های این وب‌سایت آزادانه در دسترس عموم قرار دارد با مراجعه به گیتهاب میتونید تغییرات مناسب را اعمال کنید. تمام درخواست های تغییر بررسی میشوند."
+author = "Mehran ALam Beigi"
+address = "تهران, پونک شمالی بلوار امام حسن دانشکده فنی مهندسی آزاد اسلامی - نیایش"
+mobile = "+989211756034"
+email = "info@cabea.ir"
+contact_form_action = "#"
+google_analitycs_id = ""
+top_header = true
+
+# Preloader
+[params.preloader]
+enable = true
+preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+
+# Subscription
+[params.subscription]
+enable = true
+# mailchimp subsciption
+mailchimp_form_action = ""
+mailchimp_form_name = ""
+
+# google map
+[params.map]
+enable = false
+gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"
+map_latitude = "35.762046"
+map_longitude = "51.339170"
+map_marker = "images/marker.png" # marker size 37*55 px
+
+# cookies
+[params.cookies]
+enable = false
+expire_days = 10
+
+# [[params.social]]
+# title = "facebook"
+# icon = "ti-facebook"
+# link = "#"
+
+[[params.social]]
+title = "telegram"
+icon = "ti-telegram"
+link = "#"
+
+[[params.social]]
+title = "instagram"
+icon = "ti-instagram" 
+link = "https://instagram.com/bme_tehranmarkaz"
+
+[[params.social]]
+title = "github"
+icon = "ti-github"
+link = "https://github.com/Mehranalam/cabea"
+
+[[params.social]]
+title = "linkedin"
+icon = "ti-linkedin"
+link = "https://linkedin.com/in/mehranalam"
+
+
+
+
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+
+[Languages.en.params]
+home = "خانه"
+# copyright
+copyright = "This website was developed by [Mehran Alam Beigi](https://linkedin.com/in/mehranalam) and its source is available as open source."
+
+[[Languages.en.menu.main]]
+name = "پژوهش ها و مقالات"
+url = "research/"
+weight = 2
+
+[[Languages.en.menu.main]]
+weight = 3
+name = "صفحات تکنیکال"
+hasChildren = true
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "دیارا💙"
+  url = "https://diara-token.github.io/Diara.ir/"
+  
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "اساتید"
+  url = "teacher/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "اطلاع رسانی"
+  url = "notice/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "سمینار ها"
+  url = "event/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "عضویت در انجمن"
+  url =  "form/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "پادکست‌ها"
+  url = "podcast/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "مجلات و ماه‌نامه"
+  url = "magazine/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "انتخاب گرایش"
+  url = "https://cabea.ir/orientationform/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "تالار افتخارات"
+  url = "honors/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "دوره و کارگاه ها"
+  url = "course/"
+
+  [[Languages.en.menu.main]]
+  parent = "صفحات تکنیکال"
+  name = "نویسندگان"
+  url = "author/"
+  
+[[Languages.en.menu.main]]
+name = "مقالات انجمن"
+url = "blog/"
+weight = 4
+
+[[Languages.en.menu.main]]
+name = "ارتباط"
+url = "contact/"
+weight = 5
+
+[[Languages.en.menu.main]]
+  name = "مشارکت"
+  url = "scholarship/"
+  weight = 6
+
+# main menu
+[[Languages.en.menu.main]]
+  name = "درباره ما"
+  url = "about/"
+  weight = 7
+
+# footer menu
+
+[[Languages.en.menu.footer]]
+name = "اساتید"
+url = "teacher/"
+
+[[Languages.en.menu.footer]]
+name = "انتخاب گرایش"
+url = "https://cabea.ir/orientationform/"
+
+[[Languages.en.menu.footer]]
+name = "اطلاعیه"
+url = "notice/"
+
+[[Languages.en.menu.footer]]
+name = "سمینار و رویداد"
+url = "event/"
+
+[[Languages.en.menu.footer]]
+name = "دیارا ❣️"
+url = "https://diara-token.github.io/Diara.ir/"
+
+[[Languages.en.menu.footer]]
+name = "پژوهش"
+url = "research/"

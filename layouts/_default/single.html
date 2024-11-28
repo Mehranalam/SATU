@@ -1,0 +1,94 @@
+{{ define "main" }}
+
+<!-- blog details - 78 -->
+<section class="section-sm">
+  <div class="container" align="right">
+    <div class="row" dir="rtl">
+      {{ partial "blog-sidebar.html" . }}
+      <div dir="rtl" class="col-lg-8 order-2 order-lg-1">
+        <div style="margin: 15px;" class="alert alert-info" role="alert">
+          <p><img
+              src="https://raw.githubusercontent.com/Mehranalam/Medical-Engineering-Association/main/static/images/github-mark/github-mark.svg"
+              alt="" width="24"> <b>درصورت اشکال در متن علمی و دستوری محتوا میتوانید این مقاله را تغییر دهید <br> <a
+                style="text-decoration: underline; color: red;" href="{{.Params.Edit}}">تغییر این محتوا در
+                گیتهاب</a></b></p>
+        </div>
+        <br>
+        <hr>
+        <div id="print_bbm" class="row">
+          <div style="margin-right: 25px;">
+            <p><b>{{ .Params.Pretitle }}</b></p>
+            <h2>{{ .Params.Title }}</h2>
+            <p>
+              <i class="ti-user"></i>
+              {{ range .Params.Authors }}
+              <b><a style="color:rgb(32, 94, 187); text-decoration: underline;"
+                  href="{{ `author/` | relLangURL }}{{ .name | urlize }}">
+                  {{ .name | title }}</a></b>
+              {{end}}
+
+            <p><i class="ti-bookmark-alt"></i> تاریخ انتشار مقاله : <b>{{ .Params.Dates }}</b> <br> لینک انتشار:
+              <a style="text-decoration: underline;" href="{{ .Permalink }}">{{ .Permalink }}</a>
+            </p>
+            </p>
+          </div>
+          <div class="col-12 mb-4">
+            <img src="{{ .Params.image | relURL }}" alt="blog-thumb" class="img-fluid w-100">
+          </div>
+          <!--
+          <div class="col-12" align="right">
+              <p class="list-inline-item"><i class="ti-user"></i> تنظیم
+                شده توسط: <b><a style=" text-decoration: underline;"
+                    href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.Author | title
+                    }}</a></b>
+              </p>
+              <p class="list-inline-item"><span class="font-weight-bold mr-2">{{ i18n "date" }}
+                  :</span>{{ .Params.Dates }}</p>
+
+              <p class="list-inline-item"><span class="font-weight-bold mr-2">{{ i18n "category" }}
+                  :</span>{{ range $index, $elements:= .Params.Categories }}<a style=" text-decoration: underline;"
+                  href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}"> {{ if ne $index 0 }}, {{ end }}
+                  {{ . | title }}</a> {{ end}}</p>
+          </div>
+          -->
+          <a style="margin-right: 25px; color: white;" type="button" onclick="window.print()" class="btn btn-primary btn-lg">دانلود
+            PDF مقاله</a>
+          <!-- border -->
+          <div class="col-12 my-4">
+            <div class="border-bottom"></div>
+          </div>
+          <!-- blog contect -->
+          <div id="ppop" style="margin: 6px; display: inline-block;" class="col-12 mb-5" dir="rtl" align="right">
+            <aside class="TableOfContents">
+              <h3>فهرست مطالب</h3>
+              {{ .TableOfContents }}
+            </aside>
+            {{ .Content }}
+          </div>
+          <div class="col-12 mb-5">
+            <h4>شناسنامه مقاله :</h4>
+            <br>
+            <ul style="margin-left: 25px;" class="list-group">
+              <li class="list-group-item">آدرس منبع اصلی :<b><a style="width: 40%; text-decoration: underline;"
+                    href="{{ .Params.Ref }}">{{.Params.Reftitle}}</a></b></li>
+              <li class="list-group-item">مترجمان و نویسنده ها :{{ range .Params.Authors }} | <a><b>{{ .name
+                    }}</b></a>{{end}}</li>
+              <li class="list-group-item">مدت زمان ترجمه:<b>{{ .Params.Long }}</b></li>
+              <li class="list-group-item">تاریخ انتشار مقاله : <b>{{ .Params.Dates }}</b></li>
+              <li class="list-group-item">لینک انتشار:
+                <a style="width: 40%; text-decoration: underline;" href="{{ .Permalink }}">{{ .Permalink }}</a>
+              </li>
+            </ul>
+          </div>
+          <!-- comments
+          
+          -->
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /blog details -->
+
+{{ end }}

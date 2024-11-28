@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<!-- events -->
+<section class="section">
+  <div class="container" align="right">
+    <div class="row">
+      <!-- event -->
+      {{ range .Data.Pages }}
+      <div class="col-lg-4 col-sm-6 mb-5">
+        {{ .Render "event" }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- /events
+<div align="center">
+      <img style="margin-top: 10px; margin-bottom: 20px; border-radius: 25px;" width="40%" height="10%" src="https://raw.githubusercontent.com/Mehranalam/Medical-Engineering-Association/main/static/images/IMG_7330.JPG"/>
+    </div>
+
+-->
+
+{{ end }}
